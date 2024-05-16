@@ -14,7 +14,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class Application {
-    public static void main(String[] args){
+    /* ********OpenRefactory Warning********
+	 Add @Import({
+	LdapConfig.class,
+	MyServletConfig.class,
+	WebSocketConfig.class}) instead of @EnableAutoConfiguration
+	*/
+
+	public static void main(String[] args){
         SpringApplication.run(Application.class, args);
     }
 }
