@@ -9,6 +9,7 @@ import com.kalavit.javulna.model.User;
 import com.kalavit.javulna.services.autodao.UserAutoDao;
 import java.io.StringReader;
 import javax.transaction.Transactional;
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.slf4j.Logger;
@@ -34,6 +35,8 @@ public class RemotePasswordChangeService {
     public boolean changePassword(String psChangeXml) {
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			dbf.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+			dbf.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(new InputSource(new StringReader(psChangeXml)));
             String userName = doc.getElementsByTagName("userName").item(0).getFirstChild().getNodeValue();
