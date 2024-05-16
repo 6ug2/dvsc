@@ -21,7 +21,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "MESSAGE")
 public class Message extends BaseEntity{
-    @Lob
+    private static final long serialVersionUID = 8989749074731236274L;
+
+	@Lob
     @Column(name = "TEXTMESSAGE")
     private String message;
     
