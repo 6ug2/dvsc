@@ -21,6 +21,13 @@ public class Application {
 	WebSocketConfig.class}) instead of @EnableAutoConfiguration
 	*/
 
+	/* ********OpenRefactory Warning********
+	 Add @Import({
+	LdapConfig.class,
+	MyServletConfig.class,
+	WebSocketConfig.class}) instead of @EnableAutoConfiguration
+	*/
+
 	public static void main(String[] args){
         SpringApplication.run(Application.class, args);
     }
