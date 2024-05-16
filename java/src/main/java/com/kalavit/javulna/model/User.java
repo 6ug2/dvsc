@@ -21,7 +21,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Table(name = "appuser")
 public class User extends BaseEntity implements UserDetails{
     
-    @Column(unique = true, nullable = false)
+    private static final long serialVersionUID = -2684134198107064716L;
+
+	@Column(unique = true, nullable = false)
     private String name;
     
     private String sex;
