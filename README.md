@@ -1,2 +1,1 @@
-# dvsc
-Damn Vulnerable Source Code
+Damn Vulnerable Source Code (DVSC)
