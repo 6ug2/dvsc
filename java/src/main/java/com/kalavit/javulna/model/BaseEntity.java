@@ -21,7 +21,9 @@ import javax.persistence.TemporalType;
  */
 @MappedSuperclass
 public class BaseEntity implements Serializable{
-    @Id
+    private static final long serialVersionUID = 4421279988172982039L;
+
+	@Id
     private String id =  UUID.randomUUID().toString();
     
     @Temporal(TemporalType.TIMESTAMP)
