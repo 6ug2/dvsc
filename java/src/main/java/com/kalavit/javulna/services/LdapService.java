@@ -71,6 +71,24 @@ public class LdapService {
 				File: LdapService.java, Line: 55
 					String filter="(&(uid=" + uid + ") (userPassword="+ password+ "))";
 					Variable filter is initialized with a tainted value
+				File: LdapService.java, Line: 96
+					NamingEnumeration answer=ctx.search(ldapConfig.getSearchbase(),filter,ctls);
+					Tainted information used in a sink.
+			*/
+			/* ********OpenRefactory Warning********
+			 Possible LDAP Injection!
+			Path: 
+				File: LdapController.java, Line: 28
+					
+				File: LdapController.java, Line: 28
+					@RequestParam(name="password") String pwd
+					Tainted information is coming from external source
+				File: LdapController.java, Line: 29
+					return ldapService.findUser(username,pwd);
+					Tainted information is passed through the method call via pwd to the formal param password of the method.
+				File: LdapService.java, Line: 55
+					String filter="(&(uid=" + uid + ") (userPassword="+ password+ "))";
+					Variable filter is initialized with a tainted value
 				File: LdapService.java, Line: 78
 					NamingEnumeration answer=ctx.search(ldapConfig.getSearchbase(),filter,ctls);
 					Tainted information used in a sink.
